@@ -97,19 +97,13 @@ public class DateFormatFilter extends FilterFactory {
                     }
                 }
                 String term = outputDateFormat.format(date);
+                typeAtt.setType("word");
                 if (term != null) {
                     createToken(term);
-                } else {
-                    posIncrAtt.setPositionIncrement(posIncrAtt
-                            .getPositionIncrement() + posIncrAtt
-                            .getPositionIncrement());
                 }
 
             } catch (ParseException e) {
-                posIncrAtt.setPositionIncrement(posIncrAtt
-                        .getPositionIncrement() + posIncrAtt
-                        .getPositionIncrement());
-                return true;
+
             }
             return true;
         }
