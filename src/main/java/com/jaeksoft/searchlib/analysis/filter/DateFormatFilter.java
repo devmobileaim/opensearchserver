@@ -98,9 +98,9 @@ public class DateFormatFilter extends FilterFactory {
                 }
                 if (date != null) {
                     String term = outputDateFormat.format(date);
-                    typeAtt.setType("date");
-                    if (term != null)
+                    if (term != null) {
                         createToken(term);
+                    }
                 } else {
                     return false;
                 }
