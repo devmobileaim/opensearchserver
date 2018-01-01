@@ -43,7 +43,7 @@ public class DateFormatFilter extends FilterFactory {
 
     private String output_format = OUTPUT_DEFAULT_FORMAT;
 
-    private String defaultValue = "0";
+    private String defaultValue = null;
 
     @Override
     public void initProperties() throws SearchLibException {
