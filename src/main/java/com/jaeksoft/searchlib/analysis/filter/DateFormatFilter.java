@@ -101,7 +101,8 @@ public class DateFormatFilter extends FilterFactory {
                     createToken(term);
                 } else {
                     posIncrAtt.setPositionIncrement(posIncrAtt
-                            .getPositionIncrement() + 1);
+                            .getPositionIncrement() + posIncrAtt
+                            .getPositionIncrement());
                 }
 
             } catch (ParseException e) {
