@@ -100,9 +100,9 @@ public class DateFormatFilter extends FilterFactory {
                 if (term != null)
                     createToken(term);
             } catch (NumberFormatException e) {
-
+                return false;
             } catch (ParseException e) {
-
+                return false;
             }
             return true;
         }
