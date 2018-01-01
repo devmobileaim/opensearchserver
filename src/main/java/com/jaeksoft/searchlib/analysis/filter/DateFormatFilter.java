@@ -104,8 +104,6 @@ public class DateFormatFilter extends FilterFactory {
                 } else {
                     return false;
                 }
-            } catch (NumberFormatException e) {
-                return false;
             } catch (ParseException e) {
                 return false;
             }
