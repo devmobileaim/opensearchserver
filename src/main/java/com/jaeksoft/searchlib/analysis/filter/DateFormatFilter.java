@@ -97,7 +97,7 @@ public class DateFormatFilter extends FilterFactory {
                 }
             }
             // ignore date older or later of 50 years from current date
-            if (date != null && Math.abs(date.getTime() - System.currentTimeMillis()) < 50 * 365 * 86400000) {
+            if (date != null && Math.abs(date.getTime() - System.currentTimeMillis()) < 50L * 365L * 86400000L) {
                 String term = outputDateFormat.format(date);
                 if (term != null) {
                     createToken(term);
@@ -117,6 +117,8 @@ public class DateFormatFilter extends FilterFactory {
         dateFormat = new SimpleDateFormat("MM dd yyyy", new Locale("en"));
         parsePosition = new ParsePosition(0);
         date = dateFormat.parse("12 01 2017", parsePosition);
-        System.out.println(date);
+        if (Math.abs(date.getTime() - System.currentTimeMillis()) < 50L * 365L * 86400000L) {
+            System.out.println(date);
+        }
     }
 }
