@@ -107,7 +107,8 @@ public class DateFormatFilter extends FilterFactory {
 
             } catch (ParseException e) {
                 posIncrAtt.setPositionIncrement(posIncrAtt
-                        .getPositionIncrement() + 1);
+                        .getPositionIncrement() + posIncrAtt
+                        .getPositionIncrement());
                 return true;
             }
             return true;
