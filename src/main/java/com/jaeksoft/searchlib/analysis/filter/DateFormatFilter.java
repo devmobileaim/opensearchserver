@@ -97,7 +97,7 @@ public class DateFormatFilter extends FilterFactory {
                     }
                 }
                 String term = outputDateFormat.format(date);
-                typeAtt.setType("word");
+                typeAtt.setType("date");
                 if (term != null) {
                     createToken(term);
                 }
