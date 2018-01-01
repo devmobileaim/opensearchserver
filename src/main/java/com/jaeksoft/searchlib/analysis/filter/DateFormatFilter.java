@@ -96,7 +96,8 @@ public class DateFormatFilter extends FilterFactory {
                 } catch (ParseException e) {
                 }
             }
-            if (date != null) {
+            // ignore date older or later of 50 years from current date
+            if (date != null && Math.abs(date.getTime() - System.currentTimeMillis()) < 50 * 365 * 86400000) {
                 String term = outputDateFormat.format(date);
                 if (term != null) {
                     createToken(term);
