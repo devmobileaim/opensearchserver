@@ -92,16 +92,15 @@ public class DateFormatFilter extends FilterFactory {
             for (FormatUtils.ThreadSafeDateFormat inputFormat : inputFormats) {
                 try {
                     date = inputFormat.parse(termAtt.toString());
-                } catch (ParseException e) {
-
-                }
-                if (date != null) {
                     break;
+                } catch (ParseException e) {
                 }
             }
-            String term = outputDateFormat.format(date);
-            if (term != null) {
-                createToken(term);
+            if (date != null) {
+                String term = outputDateFormat.format(date);
+                if (term != null) {
+                    createToken(term);
+                }
             }
 
             return true;
