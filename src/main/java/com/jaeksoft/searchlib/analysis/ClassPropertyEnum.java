@@ -131,6 +131,9 @@ public class ClassPropertyEnum extends ExtensibleEnumItem<ClassPropertyEnum> {
 	public static ClassPropertyEnum OUTPUT_NUMBER_FORMAT = new ClassPropertyEnum(true, "numberFormat",
 			"Output Number format", "Format number using java decimal format, for example, \"#,##0.00;(#,##0.00)\".");
 
+	public static ClassPropertyEnum OUTPUT_DATE_FORMAT = new ClassPropertyEnum(true, "dateFormat",
+			"Output Date format", "Format number using java date format, for example, \"dd-MM-YYYY\".");
+
 	public static ClassPropertyEnum INPUT_DECIMAL_SEPARATOR = new ClassPropertyEnum(true, "inputDecimalSeparator",
 			"Input decimal separator", "Character used as decimal separator");
 

@@ -40,6 +40,9 @@ public enum FilterEnum {
 
 	CzechStemFilter("A filter that stems Czech words."),
 
+	DateFormatFilter(
+			"This filter converts any date to given format"),
+
 	DecodeHtmlEntitiesFilter("This filter decode the HTML entities"),
 
 	DeduplicateTokenFilter("This filter remove any duplicates token"),
