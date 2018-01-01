@@ -88,23 +88,22 @@ public class DateFormatFilter extends FilterFactory {
         public final boolean incrementToken() throws IOException {
             if (!input.incrementToken())
                 return false;
-            try {
-                Date date = null;
-                for (FormatUtils.ThreadSafeDateFormat inputFormat:inputFormats) {
+            Date date = null;
+            for (FormatUtils.ThreadSafeDateFormat inputFormat : inputFormats) {
+                try {
                     date = inputFormat.parse(termAtt.toString());
-                    if (date != null) {
-                        break;
-                    }
-                }
-                String term = outputDateFormat.format(date);
-                typeAtt.setType("date");
-                if (term != null) {
-                    createToken(term);
-                }
+                } catch (ParseException e) {
 
-            } catch (ParseException e) {
-
+                }
+                if (date != null) {
+                    break;
+                }
             }
+            String term = outputDateFormat.format(date);
+            if (term != null) {
+                createToken(term);
+            }
+
             return true;
         }
 
@@ -113,7 +112,7 @@ public class DateFormatFilter extends FilterFactory {
     public static void main(String[] args) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd 'DE' MMMMMM 'DE' yyyy", new Locale("pt"));
         ParsePosition parsePosition = new ParsePosition(0);
-        Date date  = dateFormat.parse("29 DE MARÇO DE 2017", parsePosition);
+        Date date = dateFormat.parse("29 DE MARÇO DE 2017", parsePosition);
         System.out.println(date);
     }
 }
