@@ -26,6 +26,7 @@ package com.jaeksoft.searchlib.analysis.filter;
 import com.jaeksoft.searchlib.SearchLibException;
 import com.jaeksoft.searchlib.analysis.ClassPropertyEnum;
 import com.jaeksoft.searchlib.analysis.FilterFactory;
+import com.jaeksoft.searchlib.util.FormatUtils;
 import org.apache.lucene.analysis.TokenStream;
 
 import java.io.IOException;
@@ -51,12 +52,6 @@ public class DateFormatFilter extends FilterFactory {
         addProperty(ClassPropertyEnum.DEFAULT_VALUE, "", null, 30, 1);
     }
 
-    private static Character getSeparatorChar(String value) {
-        if (value == null || value.length() == 0)
-            return null;
-        return value.charAt(0);
-    }
-
     @Override
     public void checkValue(ClassPropertyEnum prop, String value) throws SearchLibException {
         if (value == null || value.length() == 0)
@@ -80,16 +75,6 @@ public class DateFormatFilter extends FilterFactory {
         return format;
     }
 
-    public class InputDateFormat {
-        public String pattern;
-        public String language;
-        InputDateFormat(String pattern, String language) {
-            this.pattern = pattern;
-            this.language = language;
-        }
-    }
-
-
     public class DateFormatTermFilter extends AbstractTermFilter {
 
         private final DateFormat outputDateFormat;
@@ -99,9 +84,9 @@ public class DateFormatFilter extends FilterFactory {
             outputDateFormat = newDateFormat(outputFormat);
         }
 
-        DateFormat[] inputFormats = new SimpleDateFormat[]{
-                new SimpleDateFormat("dd 'DE' MMMMMM 'DE' yyyy", new Locale("pt")),
-                new SimpleDateFormat("MM/dd/yyyy", new Locale("en"))
+        FormatUtils.ThreadSafeSimpleDateFormat[] inputFormats = new FormatUtils.ThreadSafeSimpleDateFormat[]{
+                new FormatUtils.ThreadSafeSimpleDateFormat("dd 'DE' MMMMMM 'DE' yyyy", new Locale("pt")),
+                new FormatUtils.ThreadSafeSimpleDateFormat("MM/dd/yyyy", new Locale("en"))
         };
 
         @Override
@@ -110,7 +95,7 @@ public class DateFormatFilter extends FilterFactory {
                 return false;
             try {
                 Date date = null;
-                for (DateFormat inputFormat:inputFormats) {
+                for (FormatUtils.ThreadSafeDateFormat inputFormat:inputFormats) {
                     date = inputFormat.parse(termAtt.toString());
                     if (date != null) {
                         break;
