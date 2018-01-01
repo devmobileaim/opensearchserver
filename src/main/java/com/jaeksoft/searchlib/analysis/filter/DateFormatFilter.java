@@ -43,13 +43,10 @@ public class DateFormatFilter extends FilterFactory {
 
     private String output_format = OUTPUT_DEFAULT_FORMAT;
 
-    private String defaultValue = null;
-
     @Override
     public void initProperties() throws SearchLibException {
         super.initProperties();
         addProperty(ClassPropertyEnum.OUTPUT_DATE_FORMAT, OUTPUT_DEFAULT_FORMAT, null, 20, 1);
-        addProperty(ClassPropertyEnum.DEFAULT_VALUE, "", null, 30, 1);
     }
 
     @Override
@@ -59,8 +56,6 @@ public class DateFormatFilter extends FilterFactory {
         if (prop == ClassPropertyEnum.OUTPUT_DATE_FORMAT) {
             new SimpleDateFormat(value);
             output_format = value;
-        } else if (prop == ClassPropertyEnum.DEFAULT_VALUE) {
-            defaultValue = value;
         }
     }
 
@@ -105,13 +100,9 @@ public class DateFormatFilter extends FilterFactory {
                 if (term != null)
                     createToken(term);
             } catch (NumberFormatException e) {
-                if (defaultValue == null)
-                    return false;
-                createToken(defaultValue);
+
             } catch (ParseException e) {
-                if (defaultValue == null)
-                    return false;
-                createToken(defaultValue);
+
             }
             return true;
         }
