@@ -101,9 +101,11 @@ public class DateFormatFilter extends FilterFactory {
                         break;
                     }
                 }
-                String term = outputDateFormat.format(date);
-                if (term != null)
-                    createToken(term);
+                if (date != null) {
+                    String term = outputDateFormat.format(date);
+                    if (term != null)
+                        createToken(term);
+                }
             } catch (NumberFormatException e) {
                 if (defaultValue == null)
                     return false;
