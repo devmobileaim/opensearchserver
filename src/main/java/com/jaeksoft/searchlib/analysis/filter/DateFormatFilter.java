@@ -81,8 +81,8 @@ public class DateFormatFilter extends FilterFactory {
 
         FormatUtils.ThreadSafeSimpleDateFormat[] inputFormats = new FormatUtils.ThreadSafeSimpleDateFormat[]{
                 new FormatUtils.ThreadSafeSimpleDateFormat("dd 'de' MMMMMM 'de' yyyy", new Locale("pt")),
-                new FormatUtils.ThreadSafeSimpleDateFormat("dd/MM/yy", new Locale("en")),
-                new FormatUtils.ThreadSafeSimpleDateFormat("MM/dd/yyyy", new Locale("en"))
+                new FormatUtils.ThreadSafeSimpleDateFormat("dd MM yy", new Locale("en")),
+                new FormatUtils.ThreadSafeSimpleDateFormat("MM dd yyyy", new Locale("en"))
         };
 
         @Override
@@ -98,7 +98,7 @@ public class DateFormatFilter extends FilterFactory {
                 }
             }
             // ignore date older or later of 50 years from current date
-            if (date != null && Math.abs(date.getTime() - System.currentTimeMillis()) < 50L * 365L * 86400000L) {
+            if (date != null && Math.abs(date.getTime() - System.currentTimeMillis()) < 5L * 365L * 86400000L) {
                 String term = outputDateFormat.format(date);
                 if (term != null) {
                     createToken(term);
@@ -118,7 +118,7 @@ public class DateFormatFilter extends FilterFactory {
         dateFormat = new SimpleDateFormat("MM dd yyyy", new Locale("en"));
         parsePosition = new ParsePosition(0);
         date = dateFormat.parse("12 01 2017", parsePosition);
-        if (Math.abs(date.getTime() - System.currentTimeMillis()) < 50L * 365L * 86400000L) {
+        if (Math.abs(date.getTime() - System.currentTimeMillis()) < 5L * 365L * 86400000L) {
             System.out.println(date);
         }
     }
