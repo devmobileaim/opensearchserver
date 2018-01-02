@@ -98,7 +98,7 @@ public class DateFormatFilter extends FilterFactory {
                 }
             }
             // ignore date older or later of 50 years from current date
-            long diffTime = System.currentTimeMillis() - date.getTime();
+            long diffTime = (date == null)?0:System.currentTimeMillis() - date.getTime();
             if (date != null && (diffTime < 50L * 365L * 86400000L)
                     && (diffTime > -5L * 365L * 86400000L))  {
                 String term = outputDateFormat.format(date);
