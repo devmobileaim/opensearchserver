@@ -80,8 +80,9 @@ public class DateFormatFilter extends FilterFactory {
         }
 
         FormatUtils.ThreadSafeSimpleDateFormat[] inputFormats = new FormatUtils.ThreadSafeSimpleDateFormat[]{
-                new FormatUtils.ThreadSafeSimpleDateFormat("dd 'DE' MMMMMM 'DE' yyyy", new Locale("pt")),
-                new FormatUtils.ThreadSafeSimpleDateFormat("MM dd yyyy", new Locale("en"))
+                new FormatUtils.ThreadSafeSimpleDateFormat("dd 'de' MMMMMM 'de' yyyy", new Locale("pt")),
+                new FormatUtils.ThreadSafeSimpleDateFormat("dd/MM/yy", new Locale("en")),
+                new FormatUtils.ThreadSafeSimpleDateFormat("MM/dd/yyyy", new Locale("en"))
         };
 
         @Override
@@ -91,7 +92,7 @@ public class DateFormatFilter extends FilterFactory {
             Date date = null;
             for (FormatUtils.ThreadSafeDateFormat inputFormat : inputFormats) {
                 try {
-                    date = inputFormat.parse(termAtt.toString());
+                    date = inputFormat.parse(termAtt.toString().toLowerCase());
                     break;
                 } catch (ParseException e) {
                 }
