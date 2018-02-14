@@ -41,6 +41,8 @@ import com.jaeksoft.searchlib.schema.FieldValueOriginEnum;
 import com.jaeksoft.searchlib.schema.SchemaField;
 import com.jaeksoft.searchlib.spellcheck.SpellCheckCache;
 import com.jaeksoft.searchlib.util.Timer;
+
+import org.apache.commons.io.IOUtils;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.FieldSelector;
 import org.apache.lucene.document.Fieldable;
@@ -52,7 +54,6 @@ import org.apache.lucene.search.spell.LuceneDictionary;
 import org.apache.lucene.search.spell.SpellChecker;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.util.ReaderUtil;
-import org.openqa.selenium.io.IOUtils;
 import org.roaringbitmap.RoaringBitmap;
 
 import java.io.Closeable;

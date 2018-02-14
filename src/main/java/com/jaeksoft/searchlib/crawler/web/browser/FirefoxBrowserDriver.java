@@ -25,6 +25,7 @@
 package com.jaeksoft.searchlib.crawler.web.browser;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
 public class FirefoxBrowserDriver extends BrowserDriver<FirefoxDriver> {
@@ -35,10 +36,11 @@ public class FirefoxBrowserDriver extends BrowserDriver<FirefoxDriver> {
 
 	@Override
 	public FirefoxDriver initialize() {
-		FirefoxProfile profile = new FirefoxProfile();
+		FirefoxOptions options = new FirefoxOptions();
 		// profile.setPreference("network.http.phishy-userpass-length", 255);
-		profile.setEnableNativeEvents(false);
-		return new FirefoxDriver(profile);
+//		profile.setEnableNativeEvents(false);
+//		options.setCapability(capabilityName, value);
+		return new FirefoxDriver(options);
 	}
 
 }
