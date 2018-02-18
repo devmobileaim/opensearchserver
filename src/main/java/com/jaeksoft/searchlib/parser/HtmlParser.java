@@ -540,7 +540,9 @@ public class HtmlParser extends Parser {
 				nodes = rootNode.getNodes("html");
 			if (nodes != null && nodes.size() > 0) {
 				StringBuilder sb = new StringBuilder();
-				getBodyTextContent(result, sb, nodes.get(0), true, null, 1024, xPathExclusionsSet);
+				for (HtmlNodeAbstract<?> currentNode : nodes) {
+					getBodyTextContent(result, sb, currentNode, true, null, 1024, xPathExclusionsSet);
+				}
 				result.addField(ParserFieldEnum.body, sb);
 			}
 		}
