@@ -1,0 +1,371 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Server<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.Server",
+            "projectName": "opensearchserver",
+            "args": "-extractDirectory server -httpPort 9090 -uriEncoding UTF-8",
+            "vmArgs": "-Dphantomjs.binary.path=C:/Windows/System32/phantomjs.exe -Xms1G -Xmx1G",
+            "env": {
+                "OPENSEARCHSERVER_DATA": "data"
+            }
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DateFormatFilter<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.analysis.filter.DateFormatFilter",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DegreesRadiansFilter<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.analysis.filter.DegreesRadiansFilter",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ProperNounFilter<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.analysis.filter.ProperNounFilter",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RegularExpressionReplaceFilter<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.analysis.filter.RegularExpressionReplaceFilter",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-BeiderMorseTokenFilter<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.analysis.filter.phonetic.BeiderMorseTokenFilter",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Event<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.crawler.file.Event",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PatternItem<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.crawler.web.database.pattern.PatternItem",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HttpAbstract<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.crawler.web.spider.HttpAbstract",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HttpDownloader<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.crawler.web.spider.HttpDownloader",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-NaiveCSSParser<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.crawler.web.spider.NaiveCSSParser",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-GeoFilter<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.filter.GeoFilter",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RootExpression<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.function.expression.RootExpression",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HocrBox<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.ocr.HocrBox",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HocrDocument<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.ocr.HocrDocument",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ExternalParser<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.parser.ExternalParser",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-QueryParser<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.query.QueryParser",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AuthPluginNtlmLogin<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.renderer.plugin.AuthPluginNtlmLogin",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SortField<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.sort.SortField",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ActiveDirectory<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.util.ActiveDirectory",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HunspellUtils<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.util.HunspellUtils",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Lang<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.util.Lang",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LinkUtils<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.util.LinkUtils",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MimeUtils<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.util.MimeUtils",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-NetworksUtils<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.util.NetworksUtils",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RegExpUtils<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.util.RegExpUtils",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StringUtils<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.util.StringUtils",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FloatBufferedArrayFactory<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.util.array.FloatBufferedArrayFactory",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-IntBufferedArrayFactory<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.util.array.IntBufferedArrayFactory",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Dailymotion<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.util.video.Dailymotion",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Vimeo<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.util.video.Vimeo",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-YouTube<opensearchserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.jaeksoft.searchlib.util.video.YouTube",
+            "projectName": "opensearchserver",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Attach)",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 0
+        }
+    ]
+}
