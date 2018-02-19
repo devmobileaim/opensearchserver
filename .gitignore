@@ -10,6 +10,7 @@
 /src/cc/*.o
 /src/cc/release
 /src/cc/*.bak
+/data
 .idea
 opensearchserver.iml
 dependency-reduced-pom.xml
