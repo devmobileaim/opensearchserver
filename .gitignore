@@ -6,6 +6,7 @@
 /.project
 /temp
 /bin
+/data
 .DS_Store
 /src/cc/*.o
 /src/cc/release
