@@ -33,6 +33,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.openqa.selenium.By;
 import org.xml.sax.SAXException;
 
+import com.jaeksoft.searchlib.Logging;
 import com.jaeksoft.searchlib.SearchLibException;
 import com.jaeksoft.searchlib.crawler.web.browser.BrowserDriver;
 import com.jaeksoft.searchlib.streamlimiter.StreamLimiter;
@@ -77,6 +78,7 @@ public abstract class WebDriverParserAbstract extends HtmlDocumentProvider {
 				e.printStackTrace();
 			}
 			String source = webDriver.locateBy(By.tagName("html")).get(0).getAttribute("outerHTML");
+			Logging.info("Received HTML content of "+source.length()+ " bytes");
 			String newCharset = StringUtils.charsetDetector(source.getBytes());
 			if (newCharset == null)
 				newCharset = charset;
