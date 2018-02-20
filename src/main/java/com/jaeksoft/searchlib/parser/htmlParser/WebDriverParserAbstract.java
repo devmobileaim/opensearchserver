@@ -30,6 +30,7 @@ import java.io.StringReader;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.openqa.selenium.By;
 import org.xml.sax.SAXException;
 
 import com.jaeksoft.searchlib.SearchLibException;
@@ -69,8 +70,13 @@ public abstract class WebDriverParserAbstract extends HtmlDocumentProvider {
 		StreamLimiter newStreamLimiter = null;
 		try {
 			webDriver = getWebDriver();
-			String source = webDriver.getSourceCode(streamLimiter
-					.getOriginURL());
+			webDriver.get(streamLimiter.getOriginURL());
+			try {
+				Thread.sleep(10000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			String source = webDriver.locateBy(By.tagName("html")).get(0).getAttribute("outerHTML");
 			String newCharset = StringUtils.charsetDetector(source.getBytes());
 			if (newCharset == null)
 				newCharset = charset;
