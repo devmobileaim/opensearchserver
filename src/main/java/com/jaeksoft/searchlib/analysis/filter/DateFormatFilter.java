@@ -102,9 +102,15 @@ public class DateFormatFilter extends FilterFactory {
             if (date != null && (diffTime < 50L * 365L * 86400000L)
                     && (diffTime > -5L * 365L * 86400000L))  {
                 String term = outputDateFormat.format(date);
+                if (term == null) {
+                    term = outputDateFormat.format(new Date());
+                }
                 if (term != null) {
                     createToken(term);
                 }
+            } else {
+                String term = outputDateFormat.format(new Date());
+                createToken(term);
             }
 
             return true;
